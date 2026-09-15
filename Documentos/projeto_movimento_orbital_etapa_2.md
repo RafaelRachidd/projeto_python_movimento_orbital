@@ -41,11 +41,11 @@ Em cada instante, o programa calcula a posição e a velocidade do corpo.
 O intervalo entre dois desses instantes é chamado de **passo de tempo**.
 
 Representamos esse intervalo por:
-
-\[
+$$
+\
 \Delta t
-\]
-
+\
+$$
 ou, no código Python:
 
 ```python
@@ -132,35 +132,35 @@ O método de Euler não encontra exatamente a solução da equação física.
 Ele faz uma **aproximação**.
 
 A ideia básica é:
-
-\[
+$$
+\
 \vec{v}_{n+1} =
 \vec{v}_n + \vec{a}_n\Delta t
-\]
-
+\
+$$
 e depois:
-
-\[
+$$
+\
 \vec{r}_{n+1} =
 \vec{r}_n + \vec{v}_{n+1}\Delta t
-\]
-
+\
+$$
 onde:
 
-- \(\vec{r}\) = posição;
-- \(\vec{v}\) = velocidade;
-- \(\vec{a}\) = aceleração;
-- \(\Delta t\) = passo de tempo;
-- \(n\) = instante atual;
-- \(n+1\) = próximo instante.
+- $\vec{r}$ = posição;
+- $\vec{v}$ = velocidade;
+- $\vec{a}$ = aceleração;
+- $\Delta t$ = passo de tempo;
+- $n$ = instante atual;
+- $n+1$ = próximo instante.
 
 A aceleração gravitacional utilizada no projeto é:
-
-\[
+$$
+\
 \vec{a} =
 -GM\frac{\vec{r}}{|\vec{r}|^3}
-\]
-
+\
+$$
 Assim, o programa calcula repetidamente:
 
 ```text
@@ -269,21 +269,21 @@ Os resultados registrados no programa foram:
 Durante a simulação, a posição da Terra muda.
 
 Em cada instante, o programa calcula:
-
-\[
+$$
+\
 r = |\vec{r}|
-\]
-
+\
+$$
 Esse valor representa a distância entre a Terra e o Sol.
 
 O programa guarda todas essas distâncias.
 
 Depois podemos encontrar:
-
-\[
+$$
+\
 r_{\min} = \min(r_1,r_2,r_3,\ldots,r_n)
-\]
-
+\
+$$
 Ou seja:
 
 > **a menor distância registrada entre a Terra e o Sol durante a simulação.**
@@ -293,11 +293,11 @@ Ou seja:
 # 📏 9. O que significa a distância máxima?
 
 Da mesma maneira:
-
-\[
+$$
+\
 r_{\max} = \max(r_1,r_2,r_3,\ldots,r_n)
-\]
-
+\
+$$
 Representa:
 
 > **a maior distância registrada entre a Terra e o Sol durante a simulação.**
@@ -307,11 +307,11 @@ Representa:
 # 📊 10. O que significa a "variação" do nosso gráfico?
 
 No experimento, calculamos:
-
-\[
+$$
+\
 \Delta r = r_{\max} - r_{\min}
-\]
-
+\
+$$
 Portanto, a variação não significa diretamente "erro".
 
 Ela representa a **amplitude da mudança na distância Terra–Sol observada na simulação**.
@@ -321,38 +321,39 @@ Essa distinção é importante para o trabalho científico.
 ### Exemplo: 24 horas
 
 Temos aproximadamente:
+$$
 
-\[
 r_{\min}=1,482\times10^{11}\text{ m}
-\]
-
+/
+$$
 e:
-
-\[
+$$
+\
 r_{\max}=1,508\times10^{11}\text{ m}
-\]
-
+\
+$$
 Logo:
-
-\[
+$$
+\
 \Delta r =
 1,508\times10^{11}
 -
 1,482\times10^{11}
-\]
+\
+$$
 
 resultando aproximadamente em:
-
-\[
+$$
+\
 \Delta r=2,6\times10^9\text{ m}
-\]
-
+\
+$$
 O programa apresentou:
-
-\[
+$$
+\
 \boxed{2,576\times10^9\text{ m}}
-\]
-
+\
+$$
 ---
 
 # 📈 11. Interpretação detalhada do gráfico
@@ -373,11 +374,11 @@ Representa o **passo de tempo utilizado na simulação**:
 ### Eixo Y
 
 Representa a **variação da distância**, em metros:
-
-\[
+$$
+\
 \Delta r = r_{\max}-r_{\min}
-\]
-
+\
+$$
 A escala científica exibida no gráfico é:
 
 ```text
@@ -414,41 +415,41 @@ Existe uma tendência muito clara:
 A variação aumenta conforme aumentamos o passo de tempo.
 
 ### 1 hora
-
-\[
+$$
+\
 \Delta r = 2,083\times10^8\text{ m}
-\]
-
+\
+$$
 É a menor variação observada entre os quatro testes.
 
 ---
 
 ### 6 horas
-
-\[
+$$
+\
 \Delta r = 6,669\times10^8\text{ m}
-\]
-
+\
+$$
 A variação já é aproximadamente **3,2 vezes maior** que no teste de 1 hora.
 
 ---
 
 ### 12 horas
-
-\[
+$$
+\
 \Delta r = 1,297\times10^9\text{ m}
-\]
-
+\
+$$
 A variação já ultrapassa **1 bilhão de metros**.
 
 ---
 
 ### 24 horas
-
-\[
+$$
+\
 \Delta r = 2,576\times10^9\text{ m}
-\]
-
+\
+$$
 É o maior valor observado.
 
 Comparando com o experimento de 1 hora, a variação é aproximadamente **12,4 vezes maior**.
@@ -458,17 +459,17 @@ Comparando com o experimento de 1 hora, a variação é aproximadamente **12,4 v
 # 📌 13. Comparação com a distância de referência
 
 A distância utilizada inicialmente para a Terra foi aproximadamente:
-
-\[
+$$
+\
 r_0 = 1,496\times10^{11}\text{ m}
-\]
-
+\
+$$
 Isso corresponde a aproximadamente:
-
-\[
+$$
+\
 149,6\text{ milhões de km}
-\]
-
+\
+$$
 Podemos comparar a amplitude observada com essa distância inicial.
 
 | Passo | Variação | Variação relativa aproximada |
@@ -491,11 +492,11 @@ Esse é um ponto muito importante.
 A variação observada não é automaticamente o "erro da simulação".
 
 Estamos medindo:
-
-\[
+$$
+\
 \Delta r=r_{\max}-r_{\min}
-\]
-
+\
+$$
 Para falar em **erro**, precisamos comparar um resultado da simulação com um valor de referência.
 
 Por exemplo, posteriormente podemos comparar:
@@ -532,11 +533,11 @@ Esse experimento já pode ser descrito de forma científica.
 ## Variável independente
 
 É aquilo que nós alteramos propositalmente:
-
-\[
+$$
+\
 \boxed{\Delta t}
-\]
-
+\
+$$
 ou seja:
 
 > **passo de tempo da simulação.**
@@ -553,11 +554,11 @@ Valores:
 ## Variável observada
 
 É aquilo que medimos como resultado:
-
-\[
+$$
+\
 \boxed{\Delta r}
-\]
-
+\
+$$
 ou seja:
 
 > **variação da distância entre a Terra e o Sol.**
@@ -609,35 +610,35 @@ Existe outra coisa que ainda precisamos medir.
 Se simulamos um ano:
 
 ### 1 hora
-
-\[
+$$
+\
 365\times24=8760
-\]
-
+\
+$$
 passos.
 
 ### 6 horas
-
-\[
+$$
+\
 365\times4=1460
-\]
-
+\
+$$
 passos.
 
 ### 12 horas
-
-\[
+$$
+\
 365\times2=730
-\]
-
+\
+$$
 passos.
 
 ### 24 horas
-
-\[
+$$
+\
 365
-\]
-
+\
+$$
 passos.
 
 Portanto:
@@ -656,11 +657,11 @@ Isso mostra o outro lado do problema:
 Por isso não queremos simplesmente escolher o menor `dt` possível.
 
 Queremos investigar o equilíbrio entre:
-
-\[
+$$
+\
 \boxed{\text{Precisão} \times \text{Custo computacional}}
-\]
-
+\
+$$
 ---
 
 # 🌎 19. O que ainda não devemos concluir
@@ -694,14 +695,14 @@ Queremos descobrir:
 Depois poderemos comparar o valor obtido pelo programa com um valor de referência.
 
 A fórmula do erro percentual será:
-
-\[
+$$
+\
 Erro(\%)=
 \frac{|T_{\text{simulado}}-T_{\text{referência}}|}
 {T_{\text{referência}}}
 \times100
-\]
-
+\
+$$
 Isso permitirá transformar nossa análise em uma comparação quantitativa de precisão.
 
 ---
@@ -745,8 +746,8 @@ Até agora:
 O principal resultado desta etapa foi observar experimentalmente que o **passo de tempo utilizado na integração numérica influencia a variação da distância registrada na simulação orbital**.
 
 Os dados obtidos apresentaram aumento progressivo da variação:
-
-\[
+$$
+\
 2,083\times10^8
 \rightarrow
 6,669\times10^8
@@ -754,14 +755,14 @@ Os dados obtidos apresentaram aumento progressivo da variação:
 1,297\times10^9
 \rightarrow
 2,576\times10^9\text{ m}
-\]
-
+\
+$$
 conforme o passo passou de:
-
-\[
+$$
+\
 1h\rightarrow6h\rightarrow12h\rightarrow24h
-\]
-
+\
+$$
 Esse resultado não encerra a investigação. Pelo contrário, ele fornece uma primeira evidência experimental para justificar os próximos testes de precisão, estabilidade e custo computacional.
 
 ---
@@ -789,11 +790,11 @@ dt = 60 * 60
 ```
 
 em uma variável experimental:
-
-\[
+$$
+\
 \boxed{\Delta t}
-\]
-
+\
+$$
 que pode ser controlada, comparada e analisada cientificamente.
 
 ---
