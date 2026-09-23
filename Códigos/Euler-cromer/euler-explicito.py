@@ -68,7 +68,7 @@ for dt, nome in zip(passos, nomes_passos):
     distancias = []
 
     # ======================================
-    # SIMULAÇÃO PELO MÉTODO DE EULER-CROMER
+    # SIMULAÇÃO PELO MÉTODO DE EULER EXPLÍCITO
     # ======================================
 
     for i in range(numero_passos):
@@ -82,9 +82,15 @@ for dt, nome in zip(passos, nomes_passos):
         # Calcula a aceleração gravitacional
         aceleracao = -G * M_sol * posicao / r**3
 
-        # Método de Euler-Cromer
-        velocidade = velocidade + aceleracao * dt
-        posicao = posicao + velocidade * dt
+        # ==================================
+        # MÉTODO DE EULER EXPLÍCITO
+        # ==================================
+
+        nova_posicao = posicao + velocidade * dt
+        nova_velocidade = velocidade + aceleracao * dt
+
+        posicao = nova_posicao
+        velocidade = nova_velocidade
 
     # ======================================
     # CALCULAR RESULTADOS
@@ -110,7 +116,7 @@ for dt, nome in zip(passos, nomes_passos):
 
 print()
 print("=" * 70)
-print("RESULTADOS DOS EXPERIMENTOS - MÉTODO DE EULER-CROMER")
+print("RESULTADOS DOS EXPERIMENTOS - MÉTODO DE EULER EXPLÍCITO")
 print("=" * 70)
 
 for resultado in resultados:
@@ -157,7 +163,7 @@ plt.ylabel("Variação da distância (m)")
 
 plt.title(
     "Influência do Passo de Tempo "
-    "no Método de Euler-Cromer"
+    "no Método de Euler Explícito"
 )
 
 plt.grid(axis="y")
