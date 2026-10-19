@@ -162,4 +162,10 @@ plt.title(
 
 plt.grid(axis="y")
 
+plt.savefig(
+    "euler_cromer.png",
+    dpi=300,
+    bbox_inches="tight"
+)
+
 plt.show()
